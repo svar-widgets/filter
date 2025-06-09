@@ -1,0 +1,16 @@
+{
+	"name": "wx-site-svelte-filter",
+	"version": "2.1.0",
+	"type": "module",
+	"scripts": {
+		"build": "vite build",
+		"lint": "yarn eslint ./src",
+		"start": "yarn vite --open"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"wx-svelte-filter": "2.1.0",
+		"wx-svelte-grid": "2.1.5",
+		"wx-svelte-core": "2.1.1"
+	}
+}

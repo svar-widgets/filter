@@ -1,0 +1,17 @@
+{
+	"name": "wx-filter-locales",
+	"version": "2.1.0",
+	"description": "Locales for WX Filter widgets",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"build": "true",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"wx",
+		"locales"
+	],
+	"author": "",
+	"license": "MIT"
+}

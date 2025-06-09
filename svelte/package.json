@@ -1,0 +1,62 @@
+{
+	"name": "wx-svelte-filter",
+	"version": "2.1.0",
+	"description": "SVAR Svelte Filter - a flexible and customizable filter builder (query builder) for Svelte apps",
+	"keywords": [
+		"svelte",
+		"ui component",
+		"filter",
+		"filter builder",
+		"query",
+		"query builder",
+		"filtering",
+		"svelte5",
+		"svar widgets"
+	],
+	"productTag": "filter",
+	"productTrial": false,
+	"type": "module",
+	"scripts": {
+		"build": "vite build",
+		"build:dist": "vite build --mode dist",
+		"build:tests": "vite build --mode test",
+		"lint": "yarn eslint ./demos ./src",
+		"start": "vite --open",
+		"start:tests": "vite --open=/tests/ --host 0.0.0.0  --port 5100 --mode test",
+		"test": "true",
+		"test:cypress": "cypress run -P ./ --config \"baseUrl=http://localhost:5100/tests\""
+	},
+	"svelte": "src/index.js",
+	"exports": {
+		".": {
+			"svelte": "./src/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/svar-widgets/filter.git"
+	},
+	"bugs": {
+		"url": "https://forum.svar.dev"
+	},
+	"dependencies": {
+		"wx-lib-dom": "0.7.1",
+		"wx-lib-state": "1.9.3",
+		"wx-filter-locales": "2.1.0",
+		"wx-filter-store": "2.1.0",
+		"wx-svelte-core": "2.1.1",
+		"wx-svelte-menu": "2.1.1"
+	},
+	"devDependencies": {
+		"wx-core-locales": "2.1.1",
+		"wx-svelte-grid": "2.1.5"
+	},
+	"files": [
+		"src",
+		"readme.md",
+		"whatsnew.md",
+		"license.txt"
+	]
+}

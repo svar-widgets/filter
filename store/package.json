@@ -1,0 +1,23 @@
+{
+	"name": "wx-filter-store",
+	"version": "2.1.0",
+	"type": "module",
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"types": "dist/types/index.d.ts",
+	"license": "MIT",
+	"scripts": {
+		"build": "vite build",
+		"watch": "vite build --mode development -w",
+		"lint": "yarn eslint ./src",
+		"test": "vitest --run",
+		"coverage": "vitest --run --coverage"
+	},
+	"files": [
+		"dist",
+		"license.txt"
+	],
+	"dependencies": {
+		"wx-lib-state": "1.9.3"
+	}
+}
