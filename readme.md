@@ -17,7 +17,7 @@
 
 <div align="center">
 	
-<img src="https://svar.dev/images/github/github-filter.png" alt="SVAR Core - Svelte UI Library" style="width: 700px;">
+<img src="https://svar.dev/images/github/github_filter.png" alt="SVAR Core - Svelte UI Library" style="width: 700px;">
 
 </div>
 
