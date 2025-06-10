@@ -372,6 +372,22 @@ context("FilterBuilder basic functionality ", () => {
 		cy.wxF("filtered-data-length").should("equal", 5);
 		cy.wxF("filter-rule", 3).contains("Start Date between");
 		cy.wxF("filter-rule", 3).find(".wx-value").should("not.be.empty");
+		//clear date filter for stable screenshot
+		cy.wxF("filter-rule", 3).dblclick();
+		cy.wxF("filter-value").click();
+		cy.get(".wx-filter-editor .wx-cell")
+			.eq(1)
+			.find(".wx-rangecalendar .wx-calendar button")
+			.contains("Clear")
+			.click();
+		cy.get(".wx-filter-editor .wx-cell")
+			.eq(1)
+			.find(".wx-rangecalendar .wx-calendar button")
+			.contains("Done")
+			.click();
+		cy.wxF("apply-button").click();
+		cy.wxF("filtered-data-length").should("equal", 6);
+		cy.wxF("filter-rule", 3).find(".wx-value").should("not.exist");
 		cy.shot(`filter-builder-applied-date-filter`);
 	});
 

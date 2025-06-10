@@ -152,13 +152,6 @@ export default class DataStore extends Store<IData> {
 							const fRule = rule as IFilter;
 							const out: IFilter = { ...fRule };
 
-							out.includes = fRule.includes
-								? [...fRule.includes]
-								: [];
-							out.filter =
-								fRule.filter ??
-								getFilters(out.type).find(a => a.default).id;
-
 							if (!out.type || !out.predicate) {
 								const field = fields.find(
 									f => f.id === fRule.field
@@ -167,6 +160,13 @@ export default class DataStore extends Store<IData> {
 								if (field.predicate)
 									out.predicate = field.predicate;
 							}
+
+							out.includes = fRule.includes
+								? [...fRule.includes]
+								: [];
+							out.filter =
+								fRule.filter ??
+								getFilters(out.type).find(a => a.default).id;
 
 							return out;
 						}

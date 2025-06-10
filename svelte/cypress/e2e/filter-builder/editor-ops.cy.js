@@ -165,6 +165,14 @@ context("FilterBuilder editor functionality", () => {
 			.contains("Today")
 			.click();
 		cy.wxF("includes-items").should("have.length", 0);
+		//clear date filter for stable screenshot
+		cy.wxF("filter-value").click();
+		cy.get(".wx-filter-editor .wx-cell")
+			.eq(1)
+			.find(".wx-datepicker .wx-calendar button")
+			.contains("Clear")
+			.click();
+		cy.wxF("includes-items").should("have.length", 7);
 		cy.shot(`filter-builder-date-field-filter-greater`);
 	});
 });

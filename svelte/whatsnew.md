@@ -1,3 +1,9 @@
+## 2.1.1
+
+### Fixes
+
+-   Default "contains" operator for FilterBuilder text values
+
 ## 2.1.0
 
 Public release

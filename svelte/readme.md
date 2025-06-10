@@ -17,29 +17,29 @@
 
 <div align="center">
 	
-<img src="https://svar.dev/images/github/github-filter.png" alt="SVAR Core - Svelte UI Library" style="width: 700px;">
+<img src="https://svar.dev/images/github/github_filter.png" alt="SVAR Filter - Svelte Query Builder Component" style="width: 700px;">
 
 </div>
 
 ### :jigsaw: Included Components
 
-The package includes 3 widgets: 
-- **FilterBuilder** - the main component that provides an interactive interface for building complex queries and filtering large datasets. 
-- **FilterEditor** - allows you to create a filtering rule for a single field, and can be used as a standalone component.
-- **FilterBar** - a simplified filter bar UI with inputs and select controls. It allows building filtering rules for several fields and combining them with logical operators.
+The package includes 3 widgets:
+
+-   **FilterBuilder** - the main component that provides an interactive interface for building complex queries and filtering large datasets.
+-   **FilterEditor** - allows you to create a filtering rule for a single field, and can be used as a standalone component.
+-   **FilterBar** - a simplified filter bar UI with inputs and select controls. It allows building filtering rules for several fields and combining them with logical operators.
 
 ### :sparkles: Key features:
 
-- Complex filter queries: multi-field rules, groups of filters, nested filters, AND/OR logic.
-- Multiple data types: text, number, and date filtering with type-specific operators.
-- Configurable layouts: vertical, horizontal, or minimal filter bar layouts.
-- Localization: labels and date formats can be customized to match users' locale.
-- Dynamic loading: filter options can be loaded on demand when a new filter is added.
-- JSON output: the component outputs structured JSON that can be transformed into SQL or other query formats.
-- Intuitive, straightforward API: easily set and retrieve values, customize filters, and track changes.
+-   Complex filter queries: multi-field rules, groups of filters, nested filters, AND/OR logic.
+-   Multiple data types: text, number, and date filtering with type-specific operators.
+-   Configurable layouts: vertical, horizontal, or minimal filter bar layouts.
+-   Localization: labels and date formats can be customized to match users' locale.
+-   Dynamic loading: filter options can be loaded on demand when a new filter is added.
+-   JSON output: the component outputs structured JSON that can be transformed into SQL or other query formats.
+-   Intuitive, straightforward API: easily set and retrieve values, customize filters, and track changes.
 
 [Check out the demos](https://docs.svar.dev/svelte/filter/samples/#/base/willow) to see all SVAR Filter features in action.
-
 
 ### :hammer_and_wrench: How to Use
 

@@ -1,6 +1,6 @@
 {
 	"name": "wx-svelte-filter",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "SVAR Svelte Filter - a flexible and customizable filter builder (query builder) for Svelte apps",
 	"keywords": [
 		"svelte",
@@ -41,11 +41,12 @@
 	"bugs": {
 		"url": "https://forum.svar.dev"
 	},
+	"homepage": "https://svar.dev/svelte/filter/",
 	"dependencies": {
 		"wx-lib-dom": "0.7.1",
 		"wx-lib-state": "1.9.3",
-		"wx-filter-locales": "2.1.0",
-		"wx-filter-store": "2.1.0",
+		"wx-filter-locales": "2.1.1",
+		"wx-filter-store": "2.1.1",
 		"wx-svelte-core": "2.1.1",
 		"wx-svelte-menu": "2.1.1"
 	},
