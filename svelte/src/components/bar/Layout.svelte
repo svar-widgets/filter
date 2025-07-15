@@ -214,7 +214,7 @@
 					<DateRangePicker
 						value={filter.value}
 						format={f}
-						done={true}
+						buttons={["done", "clear", "today"]}
 						placeholder={filter.placeholder ??
 							`${_("filter by")} ${filter.field} (${_(filter.filter)})`}
 						onchange={({ value }) =>

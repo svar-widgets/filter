@@ -403,7 +403,7 @@
 					<DateRangePicker
 						format={f}
 						value={_value}
-						done={true}
+						buttons={["done", "clear", "today"]}
 						onchange={changeValue}
 					/>
 				{:else}

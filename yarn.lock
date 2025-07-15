@@ -4871,6 +4871,11 @@ wx-core-locales@2.1.1:
   resolved "https://registry.yarnpkg.com/wx-core-locales/-/wx-core-locales-2.1.1.tgz#ca9cd63d0dbd96619d30949d0c9e73bc07cfbd64"
   integrity sha512-BaRT677XHobYVYfEl/xKXKVeGTwNp9j+Xj25C/xnX6rS3Io2REJeU4qTTzaqBdd7i7BCPP2mAx9DnNYfpKmtyQ==
 
+wx-core-locales@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/wx-core-locales/-/wx-core-locales-2.2.0.tgz#54be3ec83b1308f0f11b908dd8dfce7a3194decc"
+  integrity sha512-bDquS5k6v784vOsjDnkpbrqL4Yh3CQGf3Rt3gM6mAFDUI97/Iy2r7fzQ3It7Hb3dxI9Vtym4Bwsg3X3ATAz8KA==
+
 wx-grid-data-provider@2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/wx-grid-data-provider/-/wx-grid-data-provider-2.1.5.tgz#1c3c9e4377d7569040557e267ea8a876c3390114"
@@ -4895,15 +4900,15 @@ wx-lib-data-provider@1.5.1:
   resolved "https://registry.yarnpkg.com/wx-lib-data-provider/-/wx-lib-data-provider-1.5.1.tgz#806cda53e2fa1f9fafcb4a0c4f3576628ef8c0f4"
   integrity sha512-ebKYlnmXOuwgQ/812Ux06Uz7tIG3P8euUHB0/hwhL0+Buged+00uFII3bkXQ7jh5DbsTugFqPlzlKTJFQ2l0TA==
 
-wx-lib-dom@0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/wx-lib-dom/-/wx-lib-dom-0.7.1.tgz#6cbd29f198c132ed81a50ba5f98671c1de334f42"
-  integrity sha512-ja1iQcTVaZHYDrvrxC2mUfU6e0u6YyFXP4FmY8mM6v4tQCgXoWLIaEn2uJxs0czugmm5LVJ/FdDc3A8AtHWmvw==
-
 wx-lib-dom@0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/wx-lib-dom/-/wx-lib-dom-0.8.0.tgz#38514ebedbfee0350fa1f5a1168a1c8503b422de"
   integrity sha512-1jQFsoX8EiA/7D6IT8k8I52PlPFs850etY+k7jqww9CM5L3JEELprKuy422sUfXjnnpMoaVvUrmndWZVOldsAA==
+
+wx-lib-dom@0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/wx-lib-dom/-/wx-lib-dom-0.9.1.tgz#69673f820f6081b276ce9a6028ba314495cd780c"
+  integrity sha512-uh0ikmNRSgF1ksCY4mu/Nuqo/zrTOKP75Ok+YeA+Jp6i5QCzD5EabWtgAGIBq54cikAbjSGOdNPa6qYLc9s0qA==
 
 wx-lib-state@1.9.0:
   version "1.9.0"
@@ -4929,6 +4934,15 @@ wx-svelte-core@2.1.1:
     wx-lib-dom "0.8.0"
     wx-lib-svelte "0.5.1"
 
+wx-svelte-core@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/wx-svelte-core/-/wx-svelte-core-2.2.0.tgz#eb9fd5cb39781e9c4c2b0e83b319e20808bc625e"
+  integrity sha512-txE3Me/gfb899V3QJbH+Rt+e7rgvruzLCIKvZoDXT/c78TUWqMRHFZUpIkjlH9toozVvdL0UnyQ8BqVMRQqBVg==
+  dependencies:
+    wx-core-locales "2.2.0"
+    wx-lib-dom "0.8.0"
+    wx-lib-svelte "0.5.1"
+
 wx-svelte-grid@2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/wx-svelte-grid/-/wx-svelte-grid-2.1.5.tgz#1e8a83ade663751a8be13ab7484c344c40afafdb"
@@ -4950,6 +4964,14 @@ wx-svelte-menu@2.1.1:
   dependencies:
     wx-lib-dom "0.8.0"
     wx-svelte-core "2.1.1"
+
+wx-svelte-menu@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/wx-svelte-menu/-/wx-svelte-menu-2.2.0.tgz#97c175858aab2f121cf3a2ce53c65b63a45419a1"
+  integrity sha512-uEuza5t+wc4YKqTUh6DS/ZdZBHmNcJrBLu18NuRZJMWGb+zHjBKeQNG7/eIA/zMP1yhn5Lnb6hoK6TEddaC/Wg==
+  dependencies:
+    wx-lib-dom "0.9.1"
+    wx-svelte-core "2.2.0"
 
 wx-vite-tools@1.0.5:
   version "1.0.5"

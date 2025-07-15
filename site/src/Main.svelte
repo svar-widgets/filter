@@ -1,9 +1,13 @@
 <script>
-	import { FilterBuilder, createArrayFilter } from "wx-svelte-filter";
+	import {
+		FilterBuilder,
+		createArrayFilter,
+		getOptionsMap,
+	} from "wx-svelte-filter";
 	import { Grid } from "wx-svelte-grid";
 	import { getData } from "./data/index";
 
-	const { value, fields, options, data, columns } = getData();
+	const { value, fields, data, columns } = getData();
 
 	let filteredData = $state(data);
 
@@ -20,7 +24,7 @@
 		<FilterBuilder
 			{value}
 			{fields}
-			{options}
+			options={getOptionsMap(data)}
 			onchange={({ value }) => applyFilter(value)}
 		/>
 	</div>

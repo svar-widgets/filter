@@ -92,7 +92,7 @@ context("FilterBar basic functionality", () => {
 		cy.wxF("list-item", "Germany").click();
 		cy.wait(350);
 		cy.wxF("filtered-data-length").should("equal", 2);
-		cy.shot(`filter-bar-dynamic-text-select-value`);
+		cy.shot(`filter-bar-dynamic-select-value`);
 
 		cy.wxF("filter-bar-field", 0).click();
 		cy.wxF("list-item", "start").click();
@@ -106,7 +106,15 @@ context("FilterBar basic functionality", () => {
 			.click();
 		cy.wait(350);
 		cy.wxF("filtered-data-length").should("equal", 0);
-		cy.shot(`filter-bar-dynamic-text-select-value`);
+		//clear date filter for stable screenshot
+		cy.wxF("filter-bar-field", 1)
+			.click()
+			.find(".wx-datepicker .wx-calendar button")
+			.contains("Clear")
+			.click();
+		cy.wait(350);
+		cy.wxF("filtered-data-length").should("equal", 7);
+		cy.shot(`filter-bar-dynamic-date-value`);
 	});
 
 	it("should reset previous field value when selecting new dynamic field", () => {
