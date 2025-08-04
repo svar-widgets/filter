@@ -1,3 +1,9 @@
+## 2.2.1
+
+### Fixes
+
+-   FilterBuilder throws mutation error in "simple" mode
+
 ## 2.2.0
 
 -   Using Core@2.2.0

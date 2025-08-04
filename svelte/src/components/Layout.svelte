@@ -102,7 +102,7 @@
 				</Button>
 			</div>
 		</div>
-	{:else if (type = "simple")}
+	{:else if type === "simple"}
 		<div class="wx-toolbar wx-{type}">
 			<div class="wx-button">
 				<DropDownMenu
