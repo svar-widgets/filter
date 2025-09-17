@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "wx-filter",
+	"name": "@svar-ui/filter",
 	"workspaces": [
 		"svelte",
 		"store",
@@ -12,7 +12,7 @@
 		"build:site": "cd site && yarn build",
 		"build:store": "cd store && shx rm -f ./dist/index.js && yarn build",
 		"build:tests": "cd svelte && yarn build:tests",
-		"build": "cd svelte && yarn build",
+		"build": "yarn build:deps && cd svelte && yarn build",
 		"lint": "yarn eslint ./svelte/src ./svelte/demos ./store/src",
 		"prepare": "husky",
 		"start:demos": "cd svelte && yarn start",
@@ -30,7 +30,7 @@
 	"devDependencies": {
 		"@sveltejs/vite-plugin-svelte": "4.0.0",
 		"@vitest/coverage-v8": "1.6.0",
-		"wx-vite-tools": "1.0.5",
+		"@svar-ui/vite-tools": "1.0.5",
 		"autoprefixer": "10.4.20",
 		"cypress": "13.6.4",
 		"eslint": "9.14.0",

@@ -1,8 +1,8 @@
 <script>
 	import { getContext } from "svelte";
 
-	import { Button } from "wx-svelte-core";
-	import { DropDownMenu, ContextMenu } from "wx-svelte-menu";
+	import { Button } from "@svar-ui/svelte-core";
+	import { DropDownMenu, ContextMenu } from "@svar-ui/svelte-menu";
 	import List from "./editor/List.svelte";
 
 	let { type } = $props();

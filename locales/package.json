@@ -1,5 +1,5 @@
 {
-	"name": "wx-filter-locales",
+	"name": "@svar-ui/filter-locales",
 	"version": "2.2.1",
 	"description": "Locales for WX Filter widgets",
 	"type": "module",

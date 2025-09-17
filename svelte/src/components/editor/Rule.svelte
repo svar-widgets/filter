@@ -1,6 +1,6 @@
 <script>
-	import { getFilter } from "wx-filter-store";
-	import { dateToString } from "wx-lib-dom";
+	import { getFilter } from "@svar-ui/filter-store";
+	import { dateToString } from "@svar-ui/lib-dom";
 	import { getContext } from "svelte";
 
 	let { filter, field, type = "list", action = "menu" } = $props();

@@ -1,7 +1,7 @@
 <script>
 	import { FilterEditor } from "../../src";
 	import { getData } from "../data";
-	import { Willow, Locale } from "wx-svelte-core";
+	import { Willow, Locale } from "@svar-ui/svelte-core";
 
 	const { fields, options } = getData();
 

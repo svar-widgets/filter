@@ -1,5 +1,5 @@
 {
-	"name": "wx-site-svelte-filter",
+	"name": "@svar-ui/site-svelte-filter",
 	"version": "2.2.1",
 	"type": "module",
 	"scripts": {
@@ -9,8 +9,8 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"wx-svelte-filter": "2.2.1",
+		"@svar-ui/svelte-filter": "2.2.1",
 		"wx-svelte-grid": "2.1.5",
-		"wx-svelte-core": "2.1.1"
+		"@svar-ui/svelte-core": "2.2.1"
 	}
 }

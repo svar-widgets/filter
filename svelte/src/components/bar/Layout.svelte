@@ -5,8 +5,8 @@
 		Text,
 		DatePicker,
 		DateRangePicker,
-	} from "wx-svelte-core";
-	import { createFilterRule } from "wx-filter-store";
+	} from "@svar-ui/svelte-core";
+	import { createFilterRule } from "@svar-ui/filter-store";
 
 	let { fields = [], debounce = 300, onchange } = $props();
 

@@ -1,6 +1,6 @@
 <script>
 	import { getData } from "../data";
-	import { Grid } from "wx-svelte-grid";
+	import { Grid, Willow, WillowDark } from "wx-svelte-grid";
 	import { FilterBuilder } from "../../src";
 
 	const { backendFields: fields, backendValue: value, columns } = getData();
@@ -50,6 +50,8 @@
 			/>
 		</div>
 		<div class="grid">
+			<Willow />
+			<WillowDark />
 			<Grid {data} {columns} />
 		</div>
 	</div>

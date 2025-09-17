@@ -14,10 +14,10 @@ export {
 	getFilter,
 	getFilters,
 	createFilterRule,
-} from "wx-filter-store";
+} from "@svar-ui/filter-store";
 
-import { setEnv } from "wx-lib-dom";
-import { env } from "wx-lib-svelte";
+import { setEnv } from "@svar-ui/lib-dom";
+import { env } from "@svar-ui/lib-svelte";
 setEnv(env);
 
 export { FilterBuilder, FilterEditor, FilterBar, Material, Willow, WillowDark };

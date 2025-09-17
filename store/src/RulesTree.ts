@@ -1,5 +1,5 @@
-import { DataTree, uid } from "wx-lib-state";
-import type { TID } from "wx-lib-state";
+import { DataTree, uid } from "@svar-ui/lib-state";
+import type { TID } from "@svar-ui/lib-state";
 import type { IFilter, IFilterSet, IDataFilter } from "./types";
 import {
 	getFilter,

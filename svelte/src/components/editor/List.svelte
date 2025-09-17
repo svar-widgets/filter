@@ -1,7 +1,7 @@
 <script>
 	import { getContext } from "svelte";
-	import { delegateClick } from "wx-lib-dom";
-	import { Portal, Popup } from "wx-svelte-core";
+	import { delegateClick } from "@svar-ui/lib-dom";
+	import { Portal, Popup } from "@svar-ui/svelte-core";
 	import Self from "./List.svelte";
 
 	import Panel from "./Panel.svelte";

@@ -7,12 +7,12 @@
 	import Layout from "./Layout.svelte";
 
 	// core widgets lib
-	import { Locale } from "wx-svelte-core";
-	import { en } from "wx-filter-locales";
+	import { Locale } from "@svar-ui/svelte-core";
+	import { en } from "@svar-ui/filter-locales";
 
 	// stores
-	import { EventBusRouter } from "wx-lib-state";
-	import { DataStore } from "wx-filter-store";
+	import { EventBusRouter } from "@svar-ui/lib-state";
+	import { DataStore } from "@svar-ui/filter-store";
 
 	let {
 		value = { glue: "and", rules: [] },

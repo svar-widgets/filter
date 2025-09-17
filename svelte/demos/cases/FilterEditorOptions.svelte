@@ -1,7 +1,7 @@
 <script>
 	import { getData } from "../data";
 	import { FilterEditor, getOptions } from "../../src";
-	import { en } from "wx-core-locales";
+	import { en } from "@svar-ui/core-locales";
 
 	const { data } = getData();
 

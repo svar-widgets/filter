@@ -1,6 +1,6 @@
 <script>
 	import { getData } from "../data";
-	import { Button } from "wx-svelte-core";
+	import { Button } from "@svar-ui/svelte-core";
 	import { FilterEditor } from "../../src";
 
 	const { options } = getData();

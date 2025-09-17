@@ -1,5 +1,5 @@
-import { Store, EventBus, DataRouter, uid } from "wx-lib-state";
-import type { TDataConfig, TWritableCreator, TID } from "wx-lib-state";
+import { Store, EventBus, DataRouter, uid } from "@svar-ui/lib-state";
+import type { TDataConfig, TWritableCreator, TID } from "@svar-ui/lib-state";
 import RulesTree from "./RulesTree";
 
 import type {

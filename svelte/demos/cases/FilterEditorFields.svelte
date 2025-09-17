@@ -1,6 +1,6 @@
 <script>
 	import { getData } from "../data";
-	import { Field } from "wx-svelte-core";
+	import { Field } from "@svar-ui/svelte-core";
 	import { FilterEditor } from "../../src";
 
 	const { options, fields } = getData();

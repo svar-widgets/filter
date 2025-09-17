@@ -1,6 +1,6 @@
 import type { IDataMethodsConfig } from "./DataStore";
 import type RulesTree from "./RulesTree";
-import type { TID } from "wx-lib-state";
+import type { TID } from "@svar-ui/lib-state";
 
 export type TMethodsConfig = IDataMethodsConfig;
 export type AnyData = number | string | Date;

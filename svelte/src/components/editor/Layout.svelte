@@ -9,9 +9,9 @@
 		Checkbox,
 		DateRangePicker,
 		Combo,
-	} from "wx-svelte-core";
-	import { getFilters, getFilter } from "wx-filter-store";
-	import { dateToString } from "wx-lib-dom";
+	} from "@svar-ui/svelte-core";
+	import { getFilters, getFilter } from "@svar-ui/filter-store";
+	import { dateToString } from "@svar-ui/lib-dom";
 	import { getContext, onMount, untrack } from "svelte";
 
 	let {

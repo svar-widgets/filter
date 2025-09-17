@@ -1,18 +1,7 @@
 {
-	"name": "wx-svelte-filter",
+	"name": "@svar-ui/svelte-filter",
 	"version": "2.2.1",
 	"description": "SVAR Svelte Filter - a flexible and customizable filter builder (query builder) for Svelte apps",
-	"keywords": [
-		"svelte",
-		"ui component",
-		"filter",
-		"filter builder",
-		"query",
-		"query builder",
-		"filtering",
-		"svelte5",
-		"svar widgets"
-	],
 	"productTag": "filter",
 	"productTrial": false,
 	"type": "module",
@@ -43,21 +32,28 @@
 	},
 	"homepage": "https://svar.dev/svelte/filter/",
 	"dependencies": {
-		"wx-lib-dom": "0.9.1",
-		"wx-lib-state": "1.9.3",
-		"wx-filter-locales": "2.2.1",
-		"wx-filter-store": "2.2.1",
-		"wx-svelte-core": "2.2.0",
-		"wx-svelte-menu": "2.2.0"
-	},
-	"devDependencies": {
-		"wx-core-locales": "2.2.0",
-		"wx-svelte-grid": "2.1.5"
+		"@svar-ui/lib-dom": "0.9.2",
+		"@svar-ui/lib-state": "1.9.6",
+		"@svar-ui/filter-locales": "2.2.1",
+		"@svar-ui/filter-store": "2.2.1",
+		"@svar-ui/svelte-core": "2.2.1",
+		"@svar-ui/svelte-menu": "2.2.1"
 	},
 	"files": [
 		"src",
 		"readme.md",
 		"whatsnew.md",
 		"license.txt"
+	],
+	"keywords": [
+		"svelte",
+		"ui component",
+		"filter",
+		"filter builder",
+		"query",
+		"query builder",
+		"filtering",
+		"svelte5",
+		"svar widgets"
 	]
 }

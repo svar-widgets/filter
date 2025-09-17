@@ -1,10 +1,10 @@
 <script>
 	import { getData } from "../data";
 	import { FilterBuilder } from "../../src";
-	import { Segmented, Locale } from "wx-svelte-core";
+	import { Segmented, Locale } from "@svar-ui/svelte-core";
 
-	import { en, de, cn } from "wx-filter-locales";
-	import { en as coreEn, de as coreDe, cn as coreCn } from "wx-core-locales";
+	import { en, de, cn } from "@svar-ui/filter-locales";
+	import { en as coreEn, de as coreDe, cn as coreCn } from "@svar-ui/core-locales";
 
 	const { value, fields, options } = getData();
 
