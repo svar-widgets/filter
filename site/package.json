@@ -1,6 +1,6 @@
 {
 	"name": "@svar-ui/site-svelte-filter",
-	"version": "2.2.1",
+	"version": "2.3.0",
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
@@ -9,8 +9,8 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@svar-ui/svelte-filter": "2.2.1",
-		"wx-svelte-grid": "2.1.5",
-		"@svar-ui/svelte-core": "2.2.1"
+		"@svar-ui/svelte-filter": "2.3.0",
+		"wx-svelte-grid": "2.2.0",
+		"@svar-ui/svelte-core": "2.3.1"
 	}
 }

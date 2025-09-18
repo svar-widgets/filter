@@ -2,14 +2,15 @@
 	
 # SVAR Svelte Filter | Query Builder
 
-[![npm](https://img.shields.io/npm/v/wx-svelte-filter.svg)](https://www.npmjs.com/package/wx-svelte-filter)
+[![npm](https://img.shields.io/npm/v/@svar-ui/svelte-filter.svg)](https://www.npmjs.com/package/@svar-ui/svelte-filter)
 [![License](https://img.shields.io/github/license/svar-widgets/filter)](https://github.com/svar-widgets/filter/blob/main/license.txt)
+[![npm downloads](https://img.shields.io/npm/dm/@svar-ui/svelte-filter.svg)](https://www.npmjs.com/package/@svar-ui/svelte-filter)
 
 </div>
 
 <div align="center">
 
-:link: [Website](https://svar.dev/svelte/filter/) • :books: [Documentation](https://docs.svar.dev/svelte/filter/) • :eyes: [Demos](https://docs.svar.dev/svelte/filter/samples/#/base/willow)
+:link: [Website](https://svar.dev/svelte/filter/) • :books: [Documentation](https://docs.svar.dev/svelte/filter/filter-main-overview) • :eyes: [Demos](https://docs.svar.dev/svelte/filter/samples/)
 
 </div>
 
@@ -46,14 +47,14 @@ The package includes 3 widgets:
 You can install SVAR Svelte Filter as follows:
 
 ```
-npm install wx-svelte-filter
+npm install @svar-ui/svelte-filter
 ```
 
 To use SVAR Filter, simply import the package and include the component in your Svelte file:
 
 ```svelte
 <script>
-    import { FilterBuilder }  from 'wx-svelte-filter';
+    import { FilterBuilder }  from '@svar-ui/svelte-filter';
 
     const fields = [
         { id: "first_name", label: "Name", type: "text" },

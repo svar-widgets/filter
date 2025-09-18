@@ -1,3 +1,9 @@
+## 2.3.0
+
+### New features
+
+-   TypeScript definitions
+
 ## 2.2.1
 
 ### Fixes

@@ -204,13 +204,22 @@ export default class DataStore extends Store<IData> {
 	}
 }
 
-export interface IDataMethodsConfig {
-	["add-rule"]: { rule: IDataFilter; edit: boolean; after?: TID };
-	["add-group"]: { rule: IDataFilter; edit: boolean; after: TID };
-	["edit-rule"]: { id?: TID };
-	["update-rule"]: { id: TID; rule: IDataFilter };
-	["delete-rule"]: { id: TID };
-	["toggle-glue"]: { id: TID };
-	["change-rule"]: { id: TID; rule: IDataFilter };
-	["change"]: { value: IFilterSet };
-}
+type CombineTypes<T, N> = {
+	[P in keyof T]: T[P] & N;
+};
+
+export type IDataMethodsConfig = CombineTypes<
+	{
+		["add-rule"]: { rule: IDataFilter; edit?: boolean; after?: TID };
+		["add-group"]: { rule: IDataFilter; edit?: boolean; after?: TID };
+		["edit-rule"]: { id?: TID };
+		["update-rule"]: { id: TID; rule: IDataFilter };
+		["delete-rule"]: { id: TID };
+		["toggle-glue"]: { id: TID };
+		["change-rule"]: { id: TID; rule: IDataFilter };
+		["change"]: { value: IFilterSet };
+	},
+	{
+		[key: string]: any;
+	}
+>;

@@ -59,7 +59,7 @@
 
 <style>
 	.demo {
-		height: 100vh;
+		height: calc(100vh - 70px);
 		display: flex;
 		flex-direction: column;
 	}

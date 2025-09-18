@@ -43,7 +43,7 @@ context("FilterBuilder basic functionality ", () => {
 		cy.wait(1000);
 
 		cy.wxF("add-filter-button").click();
-		cy.get(".wx-menu .wx-item").should("have.length", 3);
+		cy.get(".wx-menu .wx-option").should("have.length", 3);
 		cy.shot(`filter-builder-simple-add-button-fields-list`);
 		cy.wxF("menu-item", "First Name").click();
 		cy.wxF("filter-editor").should("be.visible");
@@ -52,7 +52,7 @@ context("FilterBuilder basic functionality ", () => {
 		cy.shot(`filter-builder-simple-not-added-filter-clickoutside`);
 
 		cy.wxF("add-filter-button").click();
-		cy.get(".wx-menu .wx-item").should("have.length", 3);
+		cy.get(".wx-menu .wx-option").should("have.length", 3);
 		cy.wxF("menu-item", "First Name").click();
 		cy.wxF("filter-editor").should("be.visible");
 		cy.wxF("cancel-button").click();
@@ -60,7 +60,7 @@ context("FilterBuilder basic functionality ", () => {
 		cy.shot(`filter-builder-simple-not-added-filter-cancel`);
 
 		cy.wxF("add-filter-button").click();
-		cy.get(".wx-menu .wx-item").should("have.length", 3);
+		cy.get(".wx-menu .wx-option").should("have.length", 3);
 		cy.shot(`filter-builder-simple-add-button-fields-list`);
 		cy.wxF("menu-item", "First Name").click();
 		cy.wxF("filter-editor").should("be.visible");
@@ -69,7 +69,7 @@ context("FilterBuilder basic functionality ", () => {
 		cy.shot(`filter-builder-simple-added-rule-apply-1`);
 
 		cy.wxF("add-filter-button").click();
-		cy.get(".wx-menu .wx-item").should("have.length", 2);
+		cy.get(".wx-menu .wx-option").should("have.length", 2);
 		cy.wxF("menu-item", "Start Date").click();
 		cy.wxF("filter-editor").should("be.visible");
 		cy.wxF("apply-button").click();
@@ -77,7 +77,7 @@ context("FilterBuilder basic functionality ", () => {
 		cy.shot(`filter-builder-simple-added-rule-apply-2`);
 
 		cy.wxF("add-filter-button").click();
-		cy.get(".wx-menu .wx-item").should("have.length", 1);
+		cy.get(".wx-menu .wx-option").should("have.length", 1);
 		cy.wxF("menu-item", "Age").click();
 		cy.wxF("filter-editor").should("be.visible");
 		cy.wxF("apply-button").click();

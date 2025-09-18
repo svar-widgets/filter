@@ -7,8 +7,8 @@ import WillowDark from "../src/themes/WillowDark.svelte";
 mount(Demos, {
 	target: document.querySelector("#wx_demo_area") || document.body,
 	props: {
-		publicName: "Editor",
-		productTag: "editor",
+		publicName: "Filter",
+		productTag: "fllter",
 		skins: [
 			{ id: "willow", label: "Willow", component: Willow },
 			{ id: "willow-dark", label: "Dark", component: WillowDark },

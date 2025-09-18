@@ -1,5 +1,4 @@
 export { default as DataStore } from "./DataStore";
-export type { TMethodsConfig, TGlue } from "./types";
 export { getFilter, getFilters } from "./filters";
 
 export {
@@ -9,3 +8,5 @@ export {
 	getOptions,
 	getOptionsMap,
 } from "./helpers";
+
+export * from "./types";

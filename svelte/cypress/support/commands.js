@@ -55,7 +55,7 @@ Cypress.Commands.add("wxF", (type, id) => {
 		case "filter-editor":
 			return cy.get(".wx-filter-editor");
 		case "menu-item":
-			return cy.get(".wx-menu .wx-item").contains(id);
+			return cy.get(".wx-menu .wx-option").contains(id);
 		case "filter-glue":
 			return cy.get(".wx-glue").eq(id);
 		case "filter-bar-field":
@@ -77,6 +77,16 @@ Cypress.Commands.add("wxF", (type, id) => {
 				.then(text => parseInt(text));
 		default:
 			throw `not supported arguments for wxQ: ${type}, ${id}`;
+	}
+});
+
+// Hide caret in all tests so screenshots are stable
+Cypress.on("window:before:load", win => {
+	if (!win.document.getElementById("hide-caret-style")) {
+		const style = win.document.createElement("style");
+		style.id = "hide-caret-style";
+		style.innerHTML = `*:focus { caret-color: transparent !important; }`;
+		win.document.head.appendChild(style);
 	}
 });
 

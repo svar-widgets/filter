@@ -1,19 +1,28 @@
-import type { IFilter, IFilterSet, IDataHash, IField } from "./types";
+import type {
+	IFilter,
+	IFilterSet,
+	IDataHash,
+	IField,
+	TFilterType,
+} from "./types";
 import { getFilter } from "./filters";
 
-type ArrayFilterFunction = (value: any[]) => any[];
-type LocatorConfig = {
+export type ArrayFilterFunction = (value: any[]) => any[];
+
+export type LocatorConfig = {
 	predicate?: string;
 	sort?: boolean;
 	type?: string;
 };
+export type OptionsMap = { [key: string]: any[] };
+export type FilterFunction = (value: any) => boolean;
+
+export interface FilterOptions {
+	orNull?: boolean;
+}
+
 type PredicateFunction = (value: any) => any;
 type PredicateMap = { [key: string]: PredicateFunction };
-type OptionsMap = { [key: string]: any[] };
-type FilterFunction = (value: any) => boolean;
-type FilterOptions = {
-	orNull?: boolean;
-};
 
 const same = (v: any) => v;
 const sortNumbers = (a: number, b: number) => a - b;
@@ -108,7 +117,7 @@ function createFilterBlock(cfg: IFilter): FilterFunction {
 
 export function createFilterRule(
 	fields: IField[],
-	filter: string,
+	filter: TFilterType,
 	value: string
 ): IFilterSet {
 	if (!value) return null;
