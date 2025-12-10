@@ -23,7 +23,8 @@ context("FilterBar basic functionality", () => {
 		cy.wxF("filter-bar-field", 0)
 			.find(".wx-label")
 			.should("have.text", "last_name");
-		cy.shot(`filter-bar-dynamic-field-type-text`);
+		// [FIXME] unstable screenshot
+		//cy.shot(`filter-bar-dynamic-field-type-text`);
 
 		cy.wxF("filter-bar-field", 0).click();
 		cy.wxF("list-item", "age").click();

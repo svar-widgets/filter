@@ -39,7 +39,7 @@ The package includes 3 widgets:
 -   Dynamic loading: filter options can be loaded on demand when a new filter is added.
 -   JSON output: the component outputs structured JSON that can be transformed into SQL or other query formats.
 -   Intuitive, straightforward API: easily set and retrieve values, customize filters, and track changes.
--   Full TypeScript support with complete type definitions. 
+-	Full TypeScript support with complete type definitions.
 
 [Check out the demos](https://docs.svar.dev/svelte/filter/samples/#/base/willow) to see all SVAR Filter features in action.
 

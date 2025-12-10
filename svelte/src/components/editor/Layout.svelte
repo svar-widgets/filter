@@ -12,7 +12,7 @@
 	} from "@svar-ui/svelte-core";
 	import { getFilters, getFilter } from "@svar-ui/filter-store";
 	import { dateToString } from "@svar-ui/lib-dom";
-	import { getContext, onMount, untrack } from "svelte";
+	import { getContext, setContext, onMount, untrack } from "svelte";
 
 	let {
 		fields = null,
@@ -36,6 +36,8 @@
 	const f = l.filter?.dateFormat || l.formats?.dateFormat;
 	const dateFormat = dateToString(f, l.calendar);
 	const _ = locale.getGroup("filter");
+
+	setContext("wx-input-id", null);
 
 	// signal constants for each kind of modification
 	const ACTION_FIELD_CHANGE = 1;

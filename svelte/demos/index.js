@@ -8,7 +8,7 @@ mount(Demos, {
 	target: document.querySelector("#wx_demo_area") || document.body,
 	props: {
 		publicName: "Filter",
-		productTag: "fllter",
+		productTag: "filter",
 		skins: [
 			{ id: "willow", label: "Willow", component: Willow },
 			{ id: "willow-dark", label: "Dark", component: WillowDark },
