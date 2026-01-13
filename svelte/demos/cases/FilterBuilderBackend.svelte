@@ -5,7 +5,7 @@
 
 	const { backendFields: fields, backendValue: value, columns } = getData();
 	const server =
-		"https://master--svar-query-go--dev.webix.io/api/data/persons";
+		"https://query-backend.svar.dev/api/data/persons";
 
 	let data = $state([]);
 
