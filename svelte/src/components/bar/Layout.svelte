@@ -165,7 +165,7 @@
 	}
 
 	function getDynamicOptions(arr) {
-		return arr.map(a => ({ id: a.id, label: a.id }));
+		return arr.map(a => ({ id: a.id, label: a.label || a.id }));
 	}
 </script>
 
