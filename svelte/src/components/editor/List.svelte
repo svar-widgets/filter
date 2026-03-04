@@ -64,7 +64,7 @@
 	use:delegateClick={handlers}
 >
 	{#each filters as rule, i (rule.id)}
-		{#if type === "list" && $editor && $editor.id == rule.id}
+		{#if type === "list" && $editor && $editor.id === rule.id}
 			<Panel {rule} />
 		{:else if rule.data}
 			<Self {type} group={rule} {onshowmenu} />

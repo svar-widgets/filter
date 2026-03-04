@@ -42,7 +42,7 @@ export interface IFilterSet {
 }
 
 export interface IFilter {
-	field: TID;
+	field: string;
 	type?: TType;
 	predicate?: TPredicate;
 	filter?: TFilterType;
@@ -57,7 +57,7 @@ export interface IDataFilter {
 	data?: IDataFilter[];
 	$temp?: boolean;
 	glue?: TGlue;
-	field?: TID;
+	field?: string;
 	type?: TType;
 	predicate?: TPredicate;
 	filter?: TFilterType;
@@ -66,7 +66,7 @@ export interface IDataFilter {
 }
 
 export interface IField {
-	id: TID;
+	id: string;
 	label: string;
 	type: TType;
 	predicate?: TPredicate;

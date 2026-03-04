@@ -1,6 +1,10 @@
+## 2.4.1
+
+-   Using Svelte Core v2.4.1
+
 ## 2.4.0
 
--   Using Core@2.4.0
+-   Using Svelte Core v2.4.0
 
 ## 2.3.0
 
@@ -16,7 +20,7 @@
 
 ## 2.2.0
 
--   Using Core@2.2.0
+-   Using Svelte Core v2.2.0
 
 ## 2.1.1
 
@@ -53,7 +57,7 @@ Public release
 
 ### Updates
 
--   Use `wx-svelte-core` v1.2.3
+-   Use Svelte Core v1.2.3
 
 ## 0.7.1
 
