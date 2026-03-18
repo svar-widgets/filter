@@ -306,7 +306,7 @@ context("FilterBuilder basic functionality ", () => {
 
 		cy.wxF("add-filter-button").click();
 		cy.wxF("field-select").should("be.visible").click();
-		cy.get(".wx-dropdown .wx-list > .wx-item").should("have.length", 3);
+		cy.get(".wx-popup .wx-list > .wx-item").should("have.length", 3);
 		cy.shot(`filter-builder-list-fields-selector`);
 	});
 
@@ -358,16 +358,8 @@ context("FilterBuilder basic functionality ", () => {
 		cy.wxF("filter-select").click();
 		cy.wxF("list-item", "between").click();
 		cy.wxF("filter-value").click();
-		cy.get(".wx-filter-editor .wx-cell")
-			.eq(1)
-			.find(".wx-rangecalendar .wx-calendar button")
-			.contains("Today")
-			.click();
-		cy.get(".wx-filter-editor .wx-cell")
-			.eq(1)
-			.find(".wx-rangecalendar .wx-calendar button")
-			.contains("Done")
-			.click();
+		cy.get(".wx-popup .wx-calendar button").contains("Today").click();
+		cy.get(".wx-popup .wx-calendar button").contains("Done").click();
 		cy.wxF("apply-button").click();
 		cy.wxF("filtered-data-length").should("equal", 5);
 		cy.wxF("filter-rule", 3).contains("Start Date between");
@@ -375,16 +367,8 @@ context("FilterBuilder basic functionality ", () => {
 		//clear date filter for stable screenshot
 		cy.wxF("filter-rule", 3).dblclick();
 		cy.wxF("filter-value").click();
-		cy.get(".wx-filter-editor .wx-cell")
-			.eq(1)
-			.find(".wx-rangecalendar .wx-calendar button")
-			.contains("Clear")
-			.click();
-		cy.get(".wx-filter-editor .wx-cell")
-			.eq(1)
-			.find(".wx-rangecalendar .wx-calendar button")
-			.contains("Done")
-			.click();
+		cy.get(".wx-popup .wx-calendar button").contains("Clear").click();
+		cy.get(".wx-popup .wx-calendar button").contains("Done").click();
 		cy.wxF("apply-button").click();
 		cy.wxF("filtered-data-length").should("equal", 6);
 		cy.wxF("filter-rule", 3).find(".wx-value").should("not.exist");

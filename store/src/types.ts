@@ -11,7 +11,7 @@ import type {
 export type TMethodsConfig = IDataMethodsConfig;
 export type AnyData = number | string | Date;
 export type TGlue = "and" | "or";
-export type TPredicate = "month" | "year";
+export type TPredicate = "month" | "year" | "yearMonth";
 export type TType = "number" | "text" | "date" | "tuple";
 export type TFilterType =
 	| "greater"
@@ -42,7 +42,7 @@ export interface IFilterSet {
 }
 
 export interface IFilter {
-	field: string;
+	field: string | "*"; // "*" means any field (quick search)
 	type?: TType;
 	predicate?: TPredicate;
 	filter?: TFilterType;
@@ -128,4 +128,19 @@ export interface IFilterBarField {
 	value?: any;
 	label?: string;
 	placeholder?: string;
+}
+
+// Filter helper types
+export type ArrayFilterFunction = (value: any[]) => any[];
+export type FilterFunction = (value: any) => boolean;
+export type OptionsMap = { [key: string]: any[] };
+
+export interface LocatorConfig {
+	predicate?: string;
+	sort?: boolean;
+	type?: string;
+}
+
+export interface FilterOptions {
+	orNull?: boolean;
 }

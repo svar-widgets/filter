@@ -1,3 +1,21 @@
+## 2.5.0
+
+### New features
+
+-   FilterQuery widget:
+    -   Ability to get filtering rules via a search string
+    -   Ability to get filtering rules by natural text (AI-powered backend)
+
+### Fixes
+
+-   In FilterBar in dynamic mode label does not change
+
+## 2.4.2
+
+### Fixes
+
+-   Incorrect imports in Typescript definition files
+
 ## 2.4.1
 
 -   Using Svelte Core v2.4.1

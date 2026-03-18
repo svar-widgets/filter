@@ -32,7 +32,7 @@ Cypress.Commands.add("wxF", (type, id) => {
 		case "field-select":
 			return cy.get(".wx-filter-editor > .wx-richselect").first();
 		case "list-item":
-			return cy.get(".wx-dropdown .wx-list > .wx-item").contains(id);
+			return cy.get(".wx-popup .wx-list > .wx-item").contains(id);
 		case "filter-select":
 			return cy
 				.get(".wx-filter-editor .wx-cell > .wx-richselect")
@@ -70,6 +70,8 @@ Cypress.Commands.add("wxF", (type, id) => {
 					".wx-filter-bar > .wx-select .wx-label, .wx-filter-bar > .wx-text input, .wx-filter-bar > .wx-date input"
 				)
 				.eq(id);
+		case "filter-bar-field-label":
+			return cy.get(".wx-filter-bar > .wx-label");
 		case "filtered-data-length":
 			return cy
 				.get(".wx-result")

@@ -34,5 +34,13 @@ export default {
 		"Click to select": "Klicken, um auszuwählen",
 		None: "Keine",
 		"filter by": "filtern nach",
+
+		unknown_field: field => `Unbekanntes Feld „${field}"`,
+		expected_number: (field, value) =>
+			`Zahl erwartet für „${field}", erhalten „${value}"`,
+		expected_date: (field, value) =>
+			`Datum (JJJJ-MM-TT) erwartet für „${field}", erhalten „${value}"`,
+		no_data: (field, value) =>
+			`Keine passenden Daten für „${value}" in „${field}"`,
 	},
 };

@@ -22,24 +22,30 @@
 				fields={[
 					{
 						type: "dynamic",
+						label: "Select a field",
+						placeholder: "Common placeholder",
 						by: [
 							{
 								id: "first_name",
 								type: "text",
 								filter: "contains",
 								value: "A",
+								label: "Label for first name",
+								placeholder: "Enter text",
 							},
 							"last_name",
 							{
 								type: "number",
 								id: "age",
 								filter: "greater",
+								placeholder: "Enter number",
 							},
 							{
 								type: "text",
 								id: "country",
 								options: options.country,
 								value: "USA",
+								label: "Label for country",
 							},
 							{
 								type: "date",

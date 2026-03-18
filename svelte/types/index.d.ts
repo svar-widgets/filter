@@ -12,9 +12,14 @@ import type {
 	IFilter,
 	IFilterBarField,
 	IConfig,
+	IField,
+	IDataHash,
+	ParseResult,
+	ValidationError,
 } from "@svar-ui/filter-store";
 
 export * from "@svar-ui/filter-store";
+export { serialize as getQueryString } from "@svar-ui/filter-store";
 
 export declare const FilterBuilder: Component<
 	{
@@ -54,6 +59,24 @@ export declare const FilterBar: Component<{
 	)[];
 	debounce?: number;
 	onchange?: (ev: { value: IFilterSet }) => void;
+}>;
+
+export interface FilterQueryEvent {
+	value: string | IFilterSet | IFilter | null;
+	text: string;
+	parsed?: ParseResult;
+	error?: ValidationError | null;
+	startProgress: () => void;
+	endProgress: () => void;
+}
+
+export declare const FilterQuery: Component<{
+	value?: string;
+	placeholder?: string;
+	parse?: "none" | "strict" | "allowFreeText";
+	fields?: IField[];
+	options?: IDataHash<AnyData[]>;
+	onchange?: (ev: FilterQueryEvent) => void;
 }>;
 
 export declare const Willow: Component<{

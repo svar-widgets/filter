@@ -15,7 +15,7 @@ context("FilterBar basic functionality", () => {
 			.find(".wx-label")
 			.should("have.text", "first_name");
 		cy.wxF("filter-bar-field", 0).click();
-		cy.get(".wx-dropdown .wx-list > .wx-item").should("have.length", 5);
+		cy.get(".wx-popup .wx-list > .wx-item").should("have.length", 5);
 		cy.shot(`filter-bar-dynamic-fields-list`);
 
 		cy.wxF("list-item", "last_name").click();
@@ -100,19 +100,13 @@ context("FilterBar basic functionality", () => {
 		cy.wxF("filter-bar-field-value", 1).should("have.value", "01/01/2025");
 		cy.wait(350);
 		cy.wxF("filtered-data-length").should("equal", 5);
-		cy.wxF("filter-bar-field", 1)
-			.click()
-			.find(".wx-datepicker .wx-calendar button")
-			.contains("Today")
-			.click();
+		cy.wxF("filter-bar-field-value", 1).click();
+		cy.get(".wx-popup .wx-calendar button").contains("Today").click();
 		cy.wait(350);
 		cy.wxF("filtered-data-length").should("equal", 0);
 		//clear date filter for stable screenshot
-		cy.wxF("filter-bar-field", 1)
-			.click()
-			.find(".wx-datepicker .wx-calendar button")
-			.contains("Clear")
-			.click();
+		cy.wxF("filter-bar-field-value", 1).click();
+		cy.get(".wx-popup .wx-calendar button").contains("Clear").click();
 		cy.wait(350);
 		cy.wxF("filtered-data-length").should("equal", 7);
 		cy.shot(`filter-bar-dynamic-date-value`);
@@ -159,5 +153,57 @@ context("FilterBar basic functionality", () => {
 		cy.wait(350);
 		cy.wxF("filtered-data-length").should("equal", 7);
 		cy.shot(`filter-bar-dynamic-date-reset-value`);
+	});
+
+	it.only("can show labels and placeholders", () => {
+		cy.visit(`#/filter-bar-dynamic`);
+		cy.wait(1000);
+
+		// do some clicks to reset initial values for correct screenshots showing placeholders
+		cy.wxF("filter-bar-field", 0).click();
+		cy.wxF("list-item", "country").click();
+		cy.wxF("filter-bar-field", 0).click();
+		cy.wxF("list-item", "start").click();
+		cy.wxF("filter-bar-field", 0).click();
+		cy.wxF("list-item", "first_name").click();
+		cy.wait(350);
+
+		cy.wxF("filter-bar-field-label").contains("Label for first name");
+		cy.wxF("filter-bar-field", 1)
+			.find("input")
+			.should("have.attr", "placeholder", "Enter text");
+		cy.shot(`filter-bar-dynamic-text-label`);
+
+		cy.wxF("filter-bar-field", 0).click();
+		cy.wxF("list-item", "last_name").click();
+		cy.wxF("filter-bar-field-label").contains("Select a field");
+		cy.wxF("filter-bar-field", 1)
+			.find("input")
+			.should("have.attr", "placeholder", "Common placeholder");
+		cy.shot(`filter-bar-dynamic-text-common-label`);
+
+		cy.wxF("filter-bar-field", 0).click();
+		cy.wxF("list-item", "country").click();
+		cy.wxF("filter-bar-field-label").contains("Label for country");
+		cy.wxF("filter-bar-field", 1)
+			.find(".wx-placeholder")
+			.contains("Common placeholder");
+		cy.shot(`filter-bar-dynamic-select-label`);
+
+		cy.wxF("filter-bar-field", 0).click();
+		cy.wxF("list-item", "age").click();
+		cy.wxF("filter-bar-field-label").contains("Select a field");
+		cy.wxF("filter-bar-field", 1)
+			.find("input")
+			.should("have.attr", "placeholder", "Enter number");
+		cy.shot(`filter-bar-dynamic-number-label`);
+
+		cy.wxF("filter-bar-field", 0).click();
+		cy.wxF("list-item", "start").click();
+		cy.wxF("filter-bar-field-label").contains("Select a field");
+		cy.wxF("filter-bar-field", 1)
+			.find("input")
+			.should("have.attr", "placeholder", "Common placeholder");
+		cy.shot(`filter-bar-dynamic-date-common-label`);
 	});
 });

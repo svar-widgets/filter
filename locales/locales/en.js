@@ -34,5 +34,13 @@ export default {
 		"Click to select": "Click to select",
 		None: "None",
 		"filter by": "filter by",
+
+		unknown_field: field => `Unknown field "${field}"`,
+		expected_number: (field, value) =>
+			`Expected number for "${field}", got "${value}"`,
+		expected_date: (field, value) =>
+			`Expected date (YYYY-MM-DD) for "${field}", got "${value}"`,
+		no_data: (field, value) =>
+			`No matching data for "${value}" in "${field}"`,
 	},
 };

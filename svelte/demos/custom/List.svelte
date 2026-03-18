@@ -16,10 +16,10 @@
 		margin: 20px;
 	}
 	.row {
-		color: #999;
+		color: var(--wx-color-font-alt);
 	}
 	.row h3 {
-		font-size: 20px;
+		font-size: var(--wx-font-size-hd);
 		margin-bottom: 0px;
 	}
 	.row p {

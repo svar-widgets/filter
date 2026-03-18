@@ -143,9 +143,4 @@
 		min-width: 280px;
 		max-width: 320px;
 	}
-	/*date picker within filter*/
-	:global(.wx-popup):has(.wx-editor-wrapper) {
-		overflow: visible !important;
-		position: absolute !important;
-	}
 </style>

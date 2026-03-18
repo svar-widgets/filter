@@ -34,5 +34,12 @@ export default {
 		"Click to select": "點擊選擇",
 		None: "無",
 		"filter by": "過濾依據",
+
+		unknown_field: field => `未知字段"${field}"`,
+		expected_number: (field, value) =>
+			`"${field}"应为数字，实际为"${value}"`,
+		expected_date: (field, value) =>
+			`"${field}"应为日期（YYYY-MM-DD），实际为"${value}"`,
+		no_data: (field, value) => `"${field}"中没有匹配"${value}"的数据`,
 	},
 };

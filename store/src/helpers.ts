@@ -1,25 +1,22 @@
+// Transforms IFilterSet configurations into executable filter functions.
+//
+// Wildcard field="*" expands to OR (positive) or AND (negative) per De Morgan's law.
+// Lazy getters in getOptionsMap defer computation until field is actually accessed.
+
 import type {
 	IFilter,
 	IFilterSet,
 	IDataHash,
 	IField,
 	TFilterType,
+	ArrayFilterFunction,
+	FilterFunction,
+	LocatorConfig,
+	OptionsMap,
+	FilterOptions,
 } from "./types";
 import { getFilter } from "./filters";
-
-export type ArrayFilterFunction = (value: any[]) => any[];
-
-export type LocatorConfig = {
-	predicate?: string;
-	sort?: boolean;
-	type?: string;
-};
-export type OptionsMap = { [key: string]: any[] };
-export type FilterFunction = (value: any) => boolean;
-
-export interface FilterOptions {
-	orNull?: boolean;
-}
+import { parseDate } from "./dates";
 
 type PredicateFunction = (value: any) => any;
 type PredicateMap = { [key: string]: PredicateFunction };
@@ -27,9 +24,18 @@ type PredicateMap = { [key: string]: PredicateFunction };
 const same = (v: any) => v;
 const sortNumbers = (a: number, b: number) => a - b;
 
+// Date predicates for granular comparisons (e.g., match by month regardless of day)
+// yearMonth uses year*12+month for single comparable value
+// "date" strips time for date-only comparison, auto-applied for date fields
 const predicates: PredicateMap = {
 	month: (v: Date) => v.getMonth(),
 	year: (v: Date) => v.getFullYear(),
+	yearMonth: (v: Date) => v.getFullYear() * 12 + (v.getMonth() + 1),
+	date: (v: Date) => {
+		const d = new Date(v);
+		d.setHours(0, 0, 0, 0);
+		return d.getTime();
+	},
 };
 
 function orGroup(filters: FilterFunction[]): FilterFunction {
@@ -61,9 +67,10 @@ const group = {
 
 export function createArrayFilter(
 	cfg: IFilterSet,
-	opts?: FilterOptions
+	opts?: FilterOptions,
+	fields?: IField[]
 ): ArrayFilterFunction {
-	const f = createFilter(cfg, { orNull: true });
+	const f = createFilter(cfg, { orNull: true }, fields);
 	if (f === null) {
 		return opts && opts.orNull ? null : a => a;
 	} else {
@@ -73,16 +80,25 @@ export function createArrayFilter(
 
 export function createFilter(
 	cfg: IFilterSet,
-	opts?: FilterOptions
+	opts?: FilterOptions,
+	fields?: IField[]
 ): FilterFunction {
 	let filters: any[] = [];
 
 	if (cfg && cfg.rules) {
 		cfg.rules.forEach(rule => {
+			// Duck-type: 'rules' property distinguishes IFilterSet from IFilter
 			if ((rule as IFilterSet).rules) {
-				filters.push(createFilter(rule as IFilterSet));
+				filters.push(
+					createFilter(rule as IFilterSet, undefined, fields)
+				);
 			} else {
-				filters.push(createFilterBlock(rule as IFilter));
+				const filter = rule as IFilter;
+				if (filter.field === "*" && fields) {
+					filters.push(createAnyFieldFilter(filter, fields));
+				} else {
+					filters.push(createFilterBlock(filter));
+				}
 			}
 		});
 
@@ -93,26 +109,75 @@ export function createFilter(
 		return opts && opts.orNull ? null : () => true;
 	}
 
+	// Default glue is "and" per query spec
 	return group[cfg.glue || "and"](filters);
 }
 
+// Convert date strings to Date objects using local time (not UTC)
+function coerceDateValue(value: any, type: string | undefined): any {
+	if (type !== "date" || value instanceof Date) return value;
+	if (typeof value === "string") {
+		const date = parseDate(value);
+		if (date) return date;
+	}
+	if (typeof value === "object" && value !== null && "start" in value) {
+		return {
+			start: coerceDateValue(value.start, type),
+			end: coerceDateValue(value.end, type),
+		};
+	}
+	return value;
+}
+
 function createFilterBlock(cfg: IFilter): FilterFunction {
-	const pd = predicates[cfg.predicate] || same;
+	// Auto-apply "date" predicate for date fields to strip time component
+	const predicateKey = cfg.predicate || (cfg.type === "date" ? "date" : null);
+	const pd = predicates[predicateKey] || same;
+	// Full dates (YYYY-MM-DD) need Date conversion, then apply predicate for consistent comparison
+	const rawValue = cfg.predicate
+		? cfg.value
+		: coerceDateValue(cfg.value, cfg.type);
+	const filterValue = rawValue instanceof Date ? pd(rawValue) : rawValue;
+
 	if (cfg.includes && cfg.includes.length) {
-		// filter by list of values
+		// TODO: optimize with Set for large includes arrays
+		const coercedIncludes = cfg.includes.map(v => {
+			const raw = coerceDateValue(v, cfg.type);
+			return raw instanceof Date ? pd(raw) : raw;
+		});
 		return (value: any) => {
-			// FIXME - we can optimize this by using hashmap
-			return cfg.includes.includes(pd(value[cfg.field]));
+			return coercedIncludes.includes(pd(value[cfg.field]));
 		};
 	} else if (cfg.filter) {
-		// filter by condition
 		const check = getFilter(cfg.filter, cfg.type).handler;
 		return (value: any) => {
-			return check(pd(value[cfg.field]), cfg.value);
+			return check(pd(value[cfg.field]), filterValue);
 		};
 	}
 
 	return null;
+}
+
+// Wildcard field "*" expansion for #tag and free text per query spec
+function createAnyFieldFilter(cfg: IFilter, fields: IField[]): FilterFunction {
+	// contains/notContains restricted to text fields
+	const targetFields = fields.filter(f => {
+		if (cfg.filter === "contains" || cfg.filter === "notContains") {
+			return f.type === "text" || !f.type;
+		}
+		return true;
+	});
+
+	const fieldFilters = targetFields
+		.map(f => createFilterBlock({ ...cfg, field: f.id, type: f.type }))
+		.filter(f => f !== null);
+
+	if (!fieldFilters.length) return null;
+
+	// De Morgan: negative filters need AND (all fields must not match)
+	const isNegative =
+		cfg.filter === "notEqual" || cfg.filter === "notContains";
+	return isNegative ? andGroup(fieldFilters) : orGroup(fieldFilters);
 }
 
 export function createFilterRule(
@@ -147,6 +212,7 @@ export function getOptions(
 
 	data.forEach(item => {
 		const v = locator(item[field]);
+		// 0 is valid, null/undefined/empty are not
 		if (v || v === 0) {
 			if (!o.has(v)) {
 				o.add(v);
@@ -155,6 +221,7 @@ export function getOptions(
 		}
 	});
 
+	// Numeric comparator for numbers/dates avoids string coercion (e.g., "10" < "2")
 	if (!cfg || cfg.sort !== false) {
 		let sort;
 
@@ -176,6 +243,7 @@ export function getOptions(
 	return out;
 }
 
+// Lazy evaluation via getters - options computed only when field is accessed
 export function getOptionsMap(
 	data: IDataHash<any>[],
 	cfg?: Partial<IField>[]

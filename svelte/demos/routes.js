@@ -7,6 +7,9 @@ import FilterBuilderAPI from "./cases/FilterBuilderAPI.svelte";
 import FilterBuilderLocales from "./cases/FilterBuilderLocales.svelte";
 import FilterBuilderConvertDates from "./cases/FilterBuilderConvertDates.svelte";
 import FilterBuilderBackend from "./cases/FilterBuilderBackend.svelte";
+import FilterQuery from "./cases/FilterQuery.svelte";
+import FilterQueryMixed from "./cases/FilterQueryMixed.svelte";
+import FilterQueryNaturalText from "./cases/FilterQueryNaturalText.svelte";
 import FilterEditorBasic from "./cases/FilterEditorBasic.svelte";
 import FilterEditorEvents from "./cases/FilterEditorEvents.svelte";
 import FilterEditorFields from "./cases/FilterEditorFields.svelte";
@@ -70,6 +73,24 @@ export const links = [
 		"Filter Builder: backend",
 		FilterBuilderBackend,
 		"FilterBuilderBackend",
+	],
+	[
+		"/filter-query/:skin",
+		"Filter Query: query string",
+		FilterQuery,
+		"FilterQuery",
+	],
+	[
+		"/filter-query-natural-text/:skin",
+		"Filter Query: natural text",
+		FilterQueryNaturalText,
+		"FilterQueryNaturalText",
+	],
+	[
+		"/filter-query-mixed/:skin",
+		"Filter Query: mixed",
+		FilterQueryMixed,
+		"FilterQueryMixed",
 	],
 	[
 		"/filter-editor-base/:skin",

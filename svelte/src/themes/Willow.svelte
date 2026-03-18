@@ -16,6 +16,6 @@
 		--wx-filter-or-background: #77d257;
 		--wx-filter-and-font-color: var(--wx-color-font);
 		--wx-filter-or-font-color: var(--wx-color-font);
-		--wx-filter-border: 1px solid #e6e6e6;
+		--wx-filter-border: var(--wx-border);
 	}
 </style>

@@ -38,7 +38,6 @@
 		height: 100%;
 		display: flex;
 		flex-direction: row;
-		margin-top: 4px;
 	}
 	.filter {
 		width: 340px;

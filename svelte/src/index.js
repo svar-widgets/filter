@@ -1,6 +1,7 @@
 import FilterBuilder from "./components/FilterBuilder.svelte";
 import FilterEditor from "./components/editor/FilterEditor.svelte";
 import FilterBar from "./components/bar/FilterBar.svelte";
+import FilterQuery from "./components/FilterQuery.svelte";
 
 import Material from "./themes/Material.svelte";
 import Willow from "./themes/Willow.svelte";
@@ -13,11 +14,21 @@ export {
 	getOptionsMap,
 	getFilter,
 	getFilters,
+	getQueryHtml,
 	createFilterRule,
+	serialize as getQueryString,
 } from "@svar-ui/filter-store";
 
 import { setEnv } from "@svar-ui/lib-dom";
 import { env } from "@svar-ui/lib-svelte";
 setEnv(env);
 
-export { FilterBuilder, FilterEditor, FilterBar, Material, Willow, WillowDark };
+export {
+	FilterBuilder,
+	FilterEditor,
+	FilterBar,
+	FilterQuery,
+	Material,
+	Willow,
+	WillowDark,
+};

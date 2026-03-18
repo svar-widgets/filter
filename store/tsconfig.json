@@ -22,5 +22,5 @@
 		"outDir": "dist/"
 	},
 	"watchOptions": {},
-	"include": ["src/**/*.ts"]
+	"include": ["src/**/*.ts", "test/highlight.spec.ts"]
 }

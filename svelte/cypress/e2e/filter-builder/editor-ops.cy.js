@@ -18,7 +18,7 @@ context("FilterBuilder editor functionality", () => {
 		cy.shot(`filter-builder-field-type-text`);
 
 		cy.wxF("field-select").click();
-		cy.get(".wx-dropdown .wx-list > .wx-item").should("have.length", 3);
+		cy.get(".wx-popup .wx-list > .wx-item").should("have.length", 3);
 		cy.shot(`filter-builder-fields-list`);
 
 		cy.wxF("list-item", "Age").click();
@@ -48,7 +48,7 @@ context("FilterBuilder editor functionality", () => {
 			.find(".wx-datepicker")
 			.should("exist")
 			.click();
-		cy.get(".wx-dropdown .wx-calendar").should("exist");
+		cy.get(".wx-popup .wx-calendar").should("exist");
 		cy.shot(`filter-builder-field-type-date`);
 	});
 
@@ -159,19 +159,11 @@ context("FilterBuilder editor functionality", () => {
 		cy.wxF("filter-value").should("be.empty");
 		cy.wxF("includes-items").should("have.length", 7);
 		cy.wxF("filter-value").click();
-		cy.get(".wx-filter-editor .wx-cell")
-			.eq(1)
-			.find(".wx-datepicker .wx-calendar button")
-			.contains("Today")
-			.click();
+		cy.get(".wx-popup .wx-calendar button").contains("Today").click();
 		cy.wxF("includes-items").should("have.length", 0);
 		//clear date filter for stable screenshot
 		cy.wxF("filter-value").click();
-		cy.get(".wx-filter-editor .wx-cell")
-			.eq(1)
-			.find(".wx-datepicker .wx-calendar button")
-			.contains("Clear")
-			.click();
+		cy.get(".wx-popup .wx-calendar button").contains("Clear").click();
 		cy.wxF("includes-items").should("have.length", 7);
 		cy.shot(`filter-builder-date-field-filter-greater`);
 	});

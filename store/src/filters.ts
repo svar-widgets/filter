@@ -57,7 +57,8 @@ const filters: IFilterRule[] = [
 		label: "equal",
 		short: "=",
 		type: [TextFilters],
-		handler: (a: any, b: any) => a.toLowerCase() === b.toLowerCase(),
+		handler: (a: any, b: any) =>
+			a != null && a.toLowerCase() === b.toLowerCase(),
 	},
 	{
 		id: "equal",
@@ -83,7 +84,8 @@ const filters: IFilterRule[] = [
 		label: "not equal",
 		short: "!=",
 		type: [TextFilters],
-		handler: (a: any, b: any) => a.toLowerCase() !== b.toLowerCase(),
+		handler: (a: any, b: any) =>
+			a == null || a.toLowerCase() !== b.toLowerCase(),
 	},
 	{
 		id: "notEqual",
@@ -102,16 +104,18 @@ const filters: IFilterRule[] = [
 		default: true,
 		type: [NumberFilters, TextFilters],
 		handler: (a: any, b: any) =>
+			a != null &&
 			a.toString().toLowerCase().indexOf(b.toString().toLowerCase()) !==
-			-1,
+				-1,
 	},
 	{
 		id: "notContains",
 		label: "not contains",
 		type: [NumberFilters, TextFilters],
 		handler: (a: any, b: any) =>
+			a == null ||
 			a.toString().toLowerCase().indexOf(b.toString().toLowerCase()) ===
-			-1,
+				-1,
 	},
 
 	{
@@ -119,6 +123,7 @@ const filters: IFilterRule[] = [
 		label: "begins with",
 		type: [NumberFilters, TextFilters],
 		handler: (a: any, b: any) => {
+			if (a == null) return false;
 			a = a.toString().toLowerCase();
 			b = b.toString().toLowerCase();
 			return a.lastIndexOf(b, 0) === 0;
@@ -129,6 +134,7 @@ const filters: IFilterRule[] = [
 		label: "not begins with",
 		type: [NumberFilters, TextFilters],
 		handler: (a: any, b: any) => {
+			if (a == null) return true;
 			a = a.toString().toLowerCase();
 			b = b.toString().toLowerCase();
 			return a.lastIndexOf(b, 0) !== 0;
@@ -139,6 +145,7 @@ const filters: IFilterRule[] = [
 		label: "ends with",
 		type: [NumberFilters, TextFilters],
 		handler: (a: any, b: any) => {
+			if (a == null) return false;
 			a = a.toString().toLowerCase();
 			b = b.toString().toLowerCase();
 			return a.indexOf(b, a.length - b.length) !== -1;
@@ -149,6 +156,7 @@ const filters: IFilterRule[] = [
 		label: "not ends with",
 		type: [NumberFilters, TextFilters],
 		handler: (a: any, b: any) => {
+			if (a == null) return true;
 			a = a.toString().toLowerCase();
 			b = b.toString().toLowerCase();
 			return a.indexOf(b, a.length - b.length) === -1;
@@ -170,6 +178,22 @@ const filters: IFilterRule[] = [
 		type: [DateFilters],
 		handler: (a: any, b: any) =>
 			!b.start || a <= b.start || !b.end || a >= b.end,
+	},
+	{
+		id: "between",
+		label: "between",
+		range: true,
+		type: [NumberFilters],
+		handler: (a: any, b: any) =>
+			(b.start == null || a > b.start) && (b.end == null || a < b.end),
+	},
+	{
+		id: "notBetween",
+		label: "not between",
+		range: true,
+		type: [NumberFilters],
+		handler: (a: any, b: any) =>
+			b.start == null || a <= b.start || b.end == null || a >= b.end,
 	},
 ];
 

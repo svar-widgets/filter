@@ -69,6 +69,11 @@ export function getData() {
 			label: "End Date",
 			type: "date",
 		},
+		{
+			id: "status",
+			label: "Status",
+			type: "text",
+		},
 	];
 
 	const values = [
@@ -90,15 +95,7 @@ export function getData() {
 			"Rachel",
 			"Willi",
 		],
-		last_name: [
-			"Wonski",
-			"Kareki",
-			"Smith",
-			"Bounce",
-			"Wane",
-			"Wane",
-			"Wong",
-		],
+		last_name: ["Wonski", "Kareki", "Smith", "Bounce", "Wane"],
 		age: [24, 26, 33, 35, 44, 45, 62],
 		country: ["USA", "China", "Germany"],
 		start: [
@@ -129,6 +126,7 @@ export function getData() {
 			age: 26,
 			start: new Date(2025, 0, 3),
 			end: new Date(2025, 0, 10),
+			status: "review",
 		},
 		{
 			first_name: "Alex",
@@ -137,6 +135,7 @@ export function getData() {
 			age: 45,
 			start: new Date(2025, 2, 13),
 			end: new Date(2025, 2, 20),
+			status: "urgent",
 		},
 		{
 			first_name: "Agata",
@@ -145,6 +144,7 @@ export function getData() {
 			age: 35,
 			start: new Date(2025, 2, 8),
 			end: new Date(2025, 2, 15),
+			status: "done",
 		},
 		{
 			first_name: "Daisy",
@@ -153,6 +153,7 @@ export function getData() {
 			age: 33,
 			start: new Date(2024, 11, 4),
 			end: new Date(2024, 11, 11),
+			status: "review",
 		},
 		{
 			first_name: "John",
@@ -161,6 +162,7 @@ export function getData() {
 			age: 24,
 			start: new Date(2025, 1, 1),
 			end: new Date(2025, 1, 8),
+			status: "done",
 		},
 		{
 			first_name: "Jane",
@@ -169,6 +171,7 @@ export function getData() {
 			age: 44,
 			start: new Date(2024, 9, 2),
 			end: new Date(2024, 9, 9),
+			status: "review",
 		},
 		{
 			first_name: "Willi",
@@ -177,6 +180,7 @@ export function getData() {
 			age: 62,
 			start: new Date(2025, 1, 22),
 			end: new Date(2025, 1, 29),
+			status: "urgent",
 		},
 	];
 
