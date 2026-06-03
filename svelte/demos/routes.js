@@ -20,6 +20,7 @@ import FilterBarCombined from "./cases/FilterBarCombined.svelte";
 import FilterBarDates from "./cases/FilterBarDates.svelte";
 
 export const links = [
+	{ group: "Filter Builder" },
 	[
 		"/base/:skin",
 		"Basic Filter Builder",
@@ -74,6 +75,8 @@ export const links = [
 		FilterBuilderBackend,
 		"FilterBuilderBackend",
 	],
+
+	{ group: "Filter Query" },
 	[
 		"/filter-query/:skin",
 		"Filter Query: query string",
@@ -92,6 +95,8 @@ export const links = [
 		FilterQueryMixed,
 		"FilterQueryMixed",
 	],
+
+	{ group: "Filter Editor" },
 	[
 		"/filter-editor-base/:skin",
 		"Basic Filter Editor",
@@ -122,6 +127,8 @@ export const links = [
 		FilterEditorOptions,
 		"FilterEditorOptions",
 	],
+
+	{ group: "Filter Bar" },
 	["/filter-bar/:skin", "Basic Filter Bar", FilterBar, "FilterBar"],
 	[
 		"/filter-bar-combined/:skin",

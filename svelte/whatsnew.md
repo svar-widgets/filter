@@ -1,3 +1,10 @@
+## 2.6.0
+
+### Fixes
+
+-   FilterBuilder with line type throws error when in container
+-   FilterEditor popup is closed when selecting another rule from a dropdown
+
 ## 2.5.0
 
 ### New features
@@ -9,6 +16,7 @@
 ### Fixes
 
 -   In FilterBar in dynamic mode label does not change
+-   Error in fetching Typescript definitions from store
 
 ## 2.4.2
 

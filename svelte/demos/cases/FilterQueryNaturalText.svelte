@@ -63,7 +63,7 @@
 			onchange={handleFilter}
 			parse="none"
 		/>
-		<div style="padding: 4px; background-color: #f9f9f9">
+		<div class="rules">
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 			{@html queryHTML || "&nbsp;"}
 		</div>
@@ -112,5 +112,13 @@
 	}
 	.list {
 		flex: 1;
+	}
+	.rules {
+		padding: 4px;
+		background-color: #f9f9f9;
+	}
+
+	:global(.wx-willow-dark-theme .rules) {
+		background-color: #384047;
 	}
 </style>

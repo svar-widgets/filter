@@ -13,8 +13,7 @@
 		Locale,
 		popupContainer,
 	} from "@svar-ui/svelte-core";
-
-	const defRoute = links[0][0].replace(/\/:skin$/, "/willow");
+	const defRoute = links[1][0].replace(/\/:skin$/, "/willow");
 	const routes = {
 		"/": wrap({
 			component: {},
@@ -33,6 +32,7 @@
 
 	const allLinks = [...localLinks, ...links];
 	allLinks.forEach(a => {
+		if (!Array.isArray(a)) return;
 		const [path, , component] = a;
 		routes[path] = wrap({
 			component,

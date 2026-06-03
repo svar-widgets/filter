@@ -671,25 +671,30 @@
   resolved "https://registry.yarnpkg.com/@svar-ui/core-locales/-/core-locales-2.4.1.tgz#f1efd270c73c80a2534c67bcda4d1e9578f98f55"
   integrity sha512-+vx5LzmVkzQDm0g0t3gVxzV+hkxyAETMfs8tS2bCEsUJp7KbFxlyIk/MyW/DuPwT1DicW1zy4fahsqP43PvRfg==
 
-"@svar-ui/core-locales@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@svar-ui/core-locales/-/core-locales-2.5.0.tgz#d88ed7d2aa955bb4190f7e8fb9ff3bd92c71fc02"
-  integrity sha512-vL8y8B1/YeHd89cd6x5jzSWLxYxNICXZY2Gx4+Op26L8N8IhCR26r8fpuptugodKLIQkyua3fh27ZB+5sJSXHg==
+"@svar-ui/core-locales@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@svar-ui/core-locales/-/core-locales-2.6.0.tgz#fb7467d45cf47baadb990e3a91498d0e62d36533"
+  integrity sha512-Sma/BkR3we76Ix/67NmSh511yvtKVpi8LFK06ZbWSiC3xEsCSoKsJ5AtLmi8dxaXPa5HuCWI/jMwJsKRwQ0F2Q==
 
 "@svar-ui/lib-dom@0.12.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@svar-ui/lib-dom/-/lib-dom-0.12.0.tgz#ace3349b87f19805a5c8e3ba7d34dcdd29316e1d"
   integrity sha512-rrFdV/SlYsWFejtRHAltk/Tk91xM+uifvMwM0EmgTqi16BSe86DnnE7czMtEEVx0308cTcrD0OX2hmO+MFgArg==
 
-"@svar-ui/lib-dom@0.12.1":
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/@svar-ui/lib-dom/-/lib-dom-0.12.1.tgz#22cf166b4ba3d12454001877c30080c6df535b8c"
-  integrity sha512-srvDleQqR6stBBDijCgzDHMFTTffI6sv3XCpNPKmurrnE83L1MDNqezqg6j3+0dUVPd4AAEGOez2DvK6byblTQ==
+"@svar-ui/lib-dom@0.13.1":
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/@svar-ui/lib-dom/-/lib-dom-0.13.1.tgz#d0394f74e59672b185a06ce4659d6391c66bf2d2"
+  integrity sha512-e9+RIEkppVkAUJqfHEr7KmiVXi3uf+qddr513h5mhgSx3PNYtG9eHwtI8OQf4JMc6Hvuu3y0iv+fL6jqE340yw==
 
-"@svar-ui/lib-state@1.9.6", "@svar-ui/lib-state@^1.9.6":
+"@svar-ui/lib-state@1.9.6":
   version "1.9.6"
   resolved "https://registry.yarnpkg.com/@svar-ui/lib-state/-/lib-state-1.9.6.tgz#b2359f2a212565eaa72d6a15fc4d27aadd42a070"
   integrity sha512-twoHa8wZvzdxtES68s6Wnp4Xi1WivScNaFFK6sJ6WDgqVYOzJw0ZhVVrdwHQgieLITTKl/DYh/U3nuqtMetKYw==
+
+"@svar-ui/lib-state@1.9.7", "@svar-ui/lib-state@^1.9.6":
+  version "1.9.7"
+  resolved "https://registry.yarnpkg.com/@svar-ui/lib-state/-/lib-state-1.9.7.tgz#4f60647d3f4b8a56e4c41436db33a08fb0e0485c"
+  integrity sha512-nxRdk+54m1RJjGT2yDH7NjxAM5KECxA39kdTZezEIj1ixykyefssB9BrgxKy2jIseYxJMtd6lPZvQ3SZXuvn2g==
 
 "@svar-ui/lib-svelte@0.5.2":
   version "0.5.2"
@@ -707,22 +712,22 @@
     "@svar-ui/lib-dom" "0.12.0"
     "@svar-ui/lib-svelte" "0.5.2"
 
-"@svar-ui/svelte-core@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@svar-ui/svelte-core/-/svelte-core-2.5.0.tgz#06c4c7c58b94a2eb3ca7e91f24ccbe7895f7ba1c"
-  integrity sha512-POqG2dL6SeGcrFTYSxWWbbAdHoW9I6sdA7T9pld8/GnRn0X2sYnQBBvIPCMo5wC/zvEHVOpKGRiLZn6evTNQJw==
+"@svar-ui/svelte-core@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@svar-ui/svelte-core/-/svelte-core-2.6.0.tgz#e65d4ec569fd4248b984be35d3876c0e70436fb4"
+  integrity sha512-5fnEm4FXjRpVZgU8EoOMisiZ0bkkj0gtP1RK66Pi5Jw9OWu+ytZleaeUyFkpBxWNPX9yENkqEEOMWUnitPYO6A==
   dependencies:
-    "@svar-ui/core-locales" "2.5.0"
-    "@svar-ui/lib-dom" "0.12.1"
+    "@svar-ui/core-locales" "2.6.0"
+    "@svar-ui/lib-dom" "0.13.1"
     "@svar-ui/lib-svelte" "0.5.2"
 
-"@svar-ui/svelte-menu@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@svar-ui/svelte-menu/-/svelte-menu-2.5.0.tgz#3a79bb7c39114de42aa88109a4d8eb647698961f"
-  integrity sha512-oQf/ZDbqDUiR8EUmSgFPOu69q9tQuKxxZfc3lDaZ3RmfVRh3CCpjS/7EMbNWKDe5tCN1lFVrwSDYx2+hCKucGA==
+"@svar-ui/svelte-menu@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@svar-ui/svelte-menu/-/svelte-menu-2.6.0.tgz#3d5f10c4eeeffb187d93e5e0e7ad1b67a9d755dc"
+  integrity sha512-1sXgVKG4hUhkrnbfrSKvfp0M/OqMjbHBnoYRMZKNLs9z1hWGJpKqzZZkUZg8ahH40SfitMjK8XjEgGMFBwC/7g==
   dependencies:
-    "@svar-ui/lib-dom" "0.12.1"
-    "@svar-ui/svelte-core" "2.5.0"
+    "@svar-ui/lib-dom" "0.13.1"
+    "@svar-ui/svelte-core" "2.6.0"
 
 "@svar-ui/vite-tools@1.0.5":
   version "1.0.5"
