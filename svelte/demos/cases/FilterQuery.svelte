@@ -34,7 +34,7 @@
 </script>
 
 <div class="demo">
-	<h4 style="margin: 20px 20px 0 20px;">Fitlering by query syntax</h4>
+	<h4 style="margin: 20px 20px 0 20px;">Filtering by query syntax</h4>
 	<div class="natural-input">
 		<FilterQuery
 			bind:value

@@ -1,6 +1,6 @@
 {
 	"name": "@svar-ui/svelte-filter",
-	"version": "2.6.0",
+	"version": "2.6.1",
 	"description": "SVAR Svelte Filter - a flexible and customizable filter builder (query builder) for Svelte apps",
 	"productTag": "filter",
 	"productTrial": false,
@@ -33,12 +33,12 @@
 	},
 	"homepage": "https://svar.dev/svelte/filter/",
 	"dependencies": {
-		"@svar-ui/lib-dom": "0.13.1",
+		"@svar-ui/lib-dom": "0.14.0",
 		"@svar-ui/lib-state": "1.9.7",
-		"@svar-ui/filter-locales": "2.6.0",
-		"@svar-ui/filter-store": "2.6.0",
-		"@svar-ui/svelte-core": "2.6.0",
-		"@svar-ui/svelte-menu": "2.6.0"
+		"@svar-ui/filter-locales": "2.6.1",
+		"@svar-ui/filter-store": "2.6.1",
+		"@svar-ui/svelte-core": "2.6.1",
+		"@svar-ui/svelte-menu": "2.6.1"
 	},
 	"files": [
 		"src",

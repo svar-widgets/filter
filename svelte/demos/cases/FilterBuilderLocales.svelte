@@ -4,7 +4,11 @@
 	import { Segmented, Locale } from "@svar-ui/svelte-core";
 
 	import { en, de, cn } from "@svar-ui/filter-locales";
-	import { en as coreEn, de as coreDe, cn as coreCn } from "@svar-ui/core-locales";
+	import {
+		en as coreEn,
+		de as coreDe,
+		cn as coreCn,
+	} from "@svar-ui/core-locales";
 
 	const { value, fields, options } = getData();
 
