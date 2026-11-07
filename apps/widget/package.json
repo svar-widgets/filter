@@ -1,0 +1,65 @@
+{
+	"name": "@svar-ui/svelte-filter",
+	"version": "2.6.2",
+	"description": "SVAR Svelte Filter - a flexible and customizable filter builder (query builder) for Svelte apps",
+	"keywords": [
+		"filter",
+		"filter builder",
+		"filtering",
+		"query",
+		"query builder",
+		"svar widgets",
+		"svelte",
+		"svelte5",
+		"ui component"
+	],
+	"homepage": "https://svar.dev/svelte/filter/",
+	"bugs": {
+		"url": "https://forum.svar.dev"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/svar-widgets/filter.git"
+	},
+	"files": [
+		"dist",
+		"readme.md",
+		"whatsnew.md",
+		"license.txt"
+	],
+	"type": "module",
+	"types": "./dist/index.d.ts",
+	"svelte": "./dist/index.js",
+	"exports": {
+		".": {
+			"svelte": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"build": "svelte-package -i ./src",
+		"dev": "svelte-package -i ./src --watch"
+	},
+	"dependencies": {
+		"@svar-ui/filter-locales": "workspace:*",
+		"@svar-ui/filter-store": "workspace:*",
+		"@svar-ui/lib-dom": "catalog:",
+		"@svar-ui/lib-state": "catalog:",
+		"@svar-ui/lib-svelte": "catalog:",
+		"@svar-ui/svelte-core": "catalog:",
+		"@svar-ui/svelte-menu": "catalog:"
+	},
+	"devDependencies": {
+		"@sveltejs/package": "catalog:",
+		"@sveltejs/vite-plugin-svelte": "catalog:",
+		"svelte": "catalog:",
+		"svelte-check": "catalog:"
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"productTag": "filter"
+}

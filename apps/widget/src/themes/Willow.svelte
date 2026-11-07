@@ -1,0 +1,28 @@
+<script lang="ts">
+	import { Willow } from "@svar-ui/svelte-core";
+	import type { Snippet } from "svelte";
+
+	type Props = {
+		fonts?: boolean;
+		children?: Snippet;
+	};
+
+	let { fonts = true, children }: Props = $props();
+</script>
+
+{#if children}
+	<Willow {fonts}>{@render children()}</Willow>
+{:else}
+	<Willow {fonts} />
+{/if}
+
+<style>
+	:global(.wx-willow-theme) {
+		--wx-filter-value-color: var(--wx-color-primary);
+		--wx-filter-and-background: #fcba2e;
+		--wx-filter-or-background: #77d257;
+		--wx-filter-and-font-color: var(--wx-color-font);
+		--wx-filter-or-font-color: var(--wx-color-font);
+		--wx-filter-border: var(--wx-border);
+	}
+</style>
